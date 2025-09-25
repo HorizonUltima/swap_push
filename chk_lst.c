@@ -6,7 +6,7 @@
 /*   By: hgergink <hgergink@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 18:49:10 by hgergink          #+#    #+#             */
-/*   Updated: 2025/09/24 18:49:11 by hgergink         ###   ########.fr       */
+/*   Updated: 2025/09/25 15:54:49 by hgergink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,27 @@ int	ft_is_duplicate(int *list, int curr)
 	return (0);
 }
 
-int	ft_check_order(int argc, const char **argv, int **list_ints)
+int	ft_chk_ord(int ac, const char **av, int **lst, unsigned int *s)
 {
 	unsigned int	i;
 	long int		j;
 	long int		k;
-	unsigned int	size;
 
-	size = ft_count_ints(argc, argv);
-	if (!size || size == 1)
+	*s = ft_count_ints(ac, av);
+	if (!*s || *s == 1)
 		return (ft_operror());
-	*list_ints = (int *)malloc(size * sizeof(int));
-	if (!*list_ints)
+	*lst = (int *)malloc((*s) * sizeof(int));
+	if (!*lst)
 		return (ft_operror());
 	i = 0;
 	j = 0;
 	k = 0;
-	while (i < size)
+	while (i < *s)
 	{
-		(*list_ints)[i] = ft_atoi_l(argv[j + 1], &j, &k);
-		if (ft_is_duplicate(*list_ints, i))
+		(*lst)[i] = ft_atoi_l(av[j + 1], &j, &k);
+		if (ft_is_duplicate(*lst, i))
 		{
-			free(*list_ints);
+			free(*lst);
 			return (1);
 		}
 		i++;
