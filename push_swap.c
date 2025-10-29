@@ -6,7 +6,7 @@
 /*   By: hgergink <hgergink@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:45:29 by hgergink          #+#    #+#             */
-/*   Updated: 2025/10/29 17:17:43 by hgergink         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:20:29 by hgergink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_operror(void)
 	return (1);
 }
 
-void	sort_lesser(t_list **a, t_list **b, unsigned int size)
+void	sort_lesser(t_list **a)
 {
 	if ((*a)->rank > (*a)->next->rank && (*a)->rank > (*a)->next->next->rank)
 	{
@@ -33,7 +33,7 @@ void	sort_lesser(t_list **a, t_list **b, unsigned int size)
 	if ((*a)->rank > (*a)->next->rank)
 	{
 		ft_slist(a);
-		wrtie(1, "sa\n",3);
+		write(1, "sa\n",3);
 	}
 }
 
@@ -48,7 +48,7 @@ void	ft_push_swap(t_list **a, unsigned int size)
 		write(1, "sa\n", 3);
 	}
 	else if (size <= 3)
-		sort_lesser(a, &b, size);
+		sort_lesser(a);
 	/*else if (size <= 20)
 		sort_s_chunks(a, &b, size);
 	else if (size <= 100)
