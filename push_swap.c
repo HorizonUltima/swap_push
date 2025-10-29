@@ -6,12 +6,11 @@
 /*   By: hgergink <hgergink@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:45:29 by hgergink          #+#    #+#             */
-/*   Updated: 2025/09/25 15:53:23 by hgergink         ###   ########.fr       */
+/*   Updated: 2025/10/29 14:48:30 by hgergink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	ft_operror(void)
 {
@@ -19,15 +18,63 @@ int	ft_operror(void)
 	return (1);
 }
 
+sort_lesser
+
+void	ft_push_swap(t_list **a, unsigned int size)
+{
+	t_list	*b;
+
+	b = (void *)0;
+	if (size <= 2)
+	{
+		ft_slist(a);
+		write(1, "sa\n", 3);
+	}
+	/*else if (size <= 3)
+		sort_lesser(a, &b, size);
+	else if (size <= 20)
+		sort_s_chunks(a, &b, size);
+	else if (size <= 100)
+		sort_m_chunks(a, &b, size);
+	else if (size <= 500)
+		sort_l_chunks(a, &b, size);
+	else
+		radix_sort(a, &b, size);*/
+	ft_clearlst(&b);
+}
+
+int	is_sorted(t_list *list)
+{
+	while (list && list->next)
+	{
+		if (list->rank > list->next->rank)
+			return (0);
+		list = list->next;
+	}
+	return (1);
+}
+
 int	main(int argc, const char **argv)
 {
 	int				*list_ints;
 	unsigned int	size;
+	t_list	*acol;
 
 	if (ft_chk_ord(argc - 1, argv, &list_ints, &size))
 		return (1);
+	acol = ft_ranked(list_ints, size);
+	if (!acol)
+		return (1);
+	if (is_sorted(acol))
+	{
+		ft_clearlst(&acol);
+		free(list_ints);
+		return (0);
+	}
 	//blah blah, useful functions.
+	ft_push_swap(&acol, size);
 	write(1, "OK!", 3);
+	ft_clearlst(&acol);
 	free(list_ints);
 	return (0);
 }
