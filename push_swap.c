@@ -6,7 +6,7 @@
 /*   By: hgergink <hgergink@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:45:29 by hgergink          #+#    #+#             */
-/*   Updated: 2025/10/29 14:48:30 by hgergink         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:45:09 by hgergink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,38 @@ int	ft_operror(void)
 	return (1);
 }
 
-sort_lesser
+void	sort_lesser(t_list **a, t_list **b, unsigned int size)
+{
+	if ((*a)->rank > (*a)->next->rank && (*a)->rank > (*a)->next->next->rank)
+	{
+		ft_rlist(a);
+		write(1, "ra\n", 3);
+	}
+	else if ((*a)->next->rank > (*a)->next->next->rank)
+	{
+		ft_rrlist(a);
+		write(1, "rra\n", 4);
+	}
+	if ((*a)->rank > (*a)->next->rank)
+	{
+		ft_slist(a);
+		wrtie(1, "sa\n",3);
+	}
+}
 
 void	ft_push_swap(t_list **a, unsigned int size)
 {
 	t_list	*b;
 
 	b = (void *)0;
-	if (size <= 2)
+	if (size = 2)
 	{
 		ft_slist(a);
 		write(1, "sa\n", 3);
 	}
-	/*else if (size <= 3)
+	else if (size <= 3)
 		sort_lesser(a, &b, size);
-	else if (size <= 20)
+	/*else if (size <= 20)
 		sort_s_chunks(a, &b, size);
 	else if (size <= 100)
 		sort_m_chunks(a, &b, size);
