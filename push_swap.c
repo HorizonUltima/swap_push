@@ -6,7 +6,7 @@
 /*   By: hgergink <hgergink@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:45:29 by hgergink          #+#    #+#             */
-/*   Updated: 2025/10/29 16:45:09 by hgergink         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:17:43 by hgergink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_push_swap(t_list **a, unsigned int size)
 	t_list	*b;
 
 	b = (void *)0;
-	if (size = 2)
+	if (size == 2)
 	{
 		ft_slist(a);
 		write(1, "sa\n", 3);
