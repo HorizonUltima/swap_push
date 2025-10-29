@@ -6,7 +6,7 @@
 /*   By: hgergink <hgergink@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:45:29 by hgergink          #+#    #+#             */
-/*   Updated: 2025/10/29 17:20:29 by hgergink         ###   ########.fr       */
+/*   Updated: 2025/10/29 19:32:10 by hgergink         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ void	sort_lesser(t_list **a)
 	}
 }
 
+void	sort_horr(t_list **a, t_list **b, unsigned size)
+{
+	
+	while ()
+	// - 3 DO! Size, push to b, check both same time for efficent operations. SA when smaller is over bigger under size - 3, ra if both over size - 3, until 3 left on a 
+}
+
 void	ft_push_swap(t_list **a, unsigned int size)
 {
 	t_list	*b;
@@ -49,6 +56,8 @@ void	ft_push_swap(t_list **a, unsigned int size)
 	}
 	else if (size <= 3)
 		sort_lesser(a);
+	else 
+		sort_horr(a, &b, size);
 	/*else if (size <= 20)
 		sort_s_chunks(a, &b, size);
 	else if (size <= 100)
